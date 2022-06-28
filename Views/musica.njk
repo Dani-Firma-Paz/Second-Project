@@ -1,0 +1,48 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+<title>Musica - Daniela Firma Paz</title>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <div id="wrapper">
+          <h1>Música para Programar</h1>
+   </div>
+   
+   <section class="songs">
+
+    {% for item in items %}
+         <div class="song" id="{{item.id}}">
+              <div class="song-image">
+                <img src="https://img.youtube.com/vi/{{item.id}}/0.jpg" alt="Imagen de {{item.title}}">
+              </div>
+              <div class="song-content">
+                <p>{{item.title}}</p>
+              </div>
+              <div class= "song-info">
+              <p>{{item.duration}}</p>
+              </div>
+          </div>
+      {% endfor %}
+
+   </section>
+
+<div class="modal-overlay">
+  <div class="modal">
+    <a  class="close-modal">
+      <i class="material-icons">close</i>
+    </a>
+    <div class="modal-content">
+      <!--- colocar video aqui-->
+      <iframe src="" frameborder="0"></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+
+{% endblock %}
